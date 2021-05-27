@@ -1,0 +1,14 @@
+import matplotlib as mpl 
+import matplotlib.pyplot as plt 
+import numpy as np
+
+x = np.linspace(-3,3,1000, dtype = int)
+y = np.linspace(-3,3,1000, dtype = int)
+x, y = np.meshgrid(x, y)
+a = 1
+b = 100
+fig, graf2 = plt.subplots(subplot_kw={"projection": "3d"})
+graf2.plot_surface(x,y,(a - x)**2 + b*(y - x**2)**2)
+
+fig, graf1 = plt.subplots(subplot_kw={"projection": "3d"})
+graf1.contour(x,y,(a - x)**2 + b*(y - x**2)**2 )

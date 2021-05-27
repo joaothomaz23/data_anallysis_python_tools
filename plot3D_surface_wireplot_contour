@@ -1,0 +1,17 @@
+import matplotlib as mpl 
+import matplotlib.pyplot as plt 
+import numpy as np
+
+x = np.linspace(-10,10,1000)
+y = np.linspace(-10,10,1000)
+x, y = np.meshgrid(x, y)
+z = ((np.sin(x))**2)*((3*y - 3)**2)
+
+fig, graf = plt.subplots(subplot_kw={"projection": "3d"})
+graf.plot_surface(x,y,z)
+
+fig, graf1 = plt.subplots(subplot_kw={"projection": "3d"})
+graf1.plot_wireframe(x,y,z)
+
+fig, graf2 = plt.subplots(subplot_kw={"projection": "3d"})
+graf2.contour(x,y,z)
